@@ -1,3 +1,14 @@
+:root {
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-primary: #f4ce14;
+    --color-primary-hover: #d6b611;
+    --color-green-dark: #495e57;
+    --color-green-light: #edefee;
+    --color-gray-light: #f5f5f5;
+    --color-gray-dark: #464646;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -23,7 +34,7 @@ textarea {
     border: none;
     padding: 12px;
     border-radius: 8px;
-    background-color: #f5f5f5;
+    background-color: var(--color-gray-light);
 }
 
 .flex {
@@ -56,12 +67,12 @@ textarea {
     width: fit-content;
     padding: 6px 16px;
     border-radius: 100px;
-    background-color: #f4ce14;
+    background-color: var(--color-primary);
     transition: all 0.3s ease;
 }
 
 .action-button:hover {
-    background-color: #d6b611;
+    background-color: var(--color-primary-hover);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -86,7 +97,7 @@ a:link,
 a:visited,
 Link:link,
 Link:visited {
-    color: #000000;
+    color: var(--color-black);
     text-decoration: none;
 }
 
@@ -101,11 +112,11 @@ Link:visited {
 }
 
 .menu-link:hover {
-    border-bottom: 4px solid #f4ce14;
+    border-bottom: 4px solid var(--color-primary);
 }
 
 .active-link .menu-link {
-    border-bottom: 4px solid #f4ce14;
+    border-bottom: 4px solid var(--color-primary);
 }
 
 .mobile {
@@ -119,8 +130,8 @@ Link:visited {
 /* HERO */
 
 .hero {
-    color: #ffffff;
-    background-color: #495e57;
+    color: var(--color-white);
+    background-color: var(--color-green-dark);
     overflow: visible;
 }
 
@@ -144,20 +155,20 @@ Link:visited {
 
 .hero-text > h1 {
     line-height: 1;
-    font-size: 3rem;
-    color: #f4ce14;
+    font-size: 48px;
+    color: var(--color-primary);
 }
 
 .hero-text > h2 {
     line-height: 1;
-    font-size: 2rem;
+    font-size: 32px;
     font-weight: 400;
 }
 
 .hero-image {
     justify-self: end;
     max-width: 320px;
-    margin-bottom: -4rem;
+    margin-bottom: -64px;
 }
 
 .hero-image img {
@@ -186,7 +197,7 @@ Link:visited {
 }
 
 .specials-topbar > h1 {
-    font-size: 2.5rem;
+    font-size: 48px;
     margin-bottom: 16px;
 }
 
@@ -204,7 +215,7 @@ Link:visited {
 .menu-card {
     display: flex;
     flex-direction: column;
-    background-color: #edefee;
+    background-color: var(--color-green-light);
     border-radius: 12px;
     overflow: hidden;
     height: 100%;
@@ -240,18 +251,17 @@ Link:visited {
 }
 
 .menu-card-content > h1 {
-    font-size: 2.2rem;
+    font-size: 32px;
     line-height: 1.1;
-    min-height: 1em;
 }
 
 .menu-card-content > h3 {
-    font-size: 1.8rem;
-    color: #495e57;
+    font-size: 24px;
+    color: var(--color-green-dark);
 }
 
 .menu-card-content > p {
-    min-height: 6em;
+    min-height: 96px;
 }
 
 .special-button {
@@ -261,14 +271,14 @@ Link:visited {
     font-size: 20px;
     padding: 8px 16px;
     border-radius: 8px;
-    background-color: #f4ce14;
+    background-color: var(--color-primary);
     transition:
         background-color 0.3s ease,
         box-shadow 0.3s ease;
 }
 
 .special-button:hover {
-    background-color: #d6b611;
+    background-color: var(--color-primary-hover);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
 
@@ -285,8 +295,8 @@ Link:visited {
 
 .testimonials-topbar > h1 {
     text-align: center;
-    font-size: 3rem;
-    margin: 4rem 0 1rem 0;
+    font-size: 48px;
+    margin: 16px 0 24px 0;
 }
 
 .testimonials-cards {
@@ -299,14 +309,14 @@ Link:visited {
 
 .testimonial-card {
     border-radius: 16px;
-    background-color: #edefee;
+    background-color: var(--color-green-light);
     padding: 24px;
     min-height: 240px;
 }
 
 .testimonial-card-carousel {
     border-radius: 16px;
-    background-color: #edefee;
+    background-color: var(--color-green-light);
     padding: 24px;
     min-height: 200px;
 }
@@ -326,7 +336,7 @@ Link:visited {
 /* ABOUT */
 
 .about-us {
-    background-color: #f4ce14;
+    background-color: var(--color-primary);
 }
 
 .about-us-content {
@@ -335,17 +345,17 @@ Link:visited {
     padding: 16px 12px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    min-height: 22rem;
+    min-height: 352px;
 }
 
 .hero-text > .little-lemon {
-    color: #495e57;
+    color: var(--color-green-dark);
 }
 
 .double-image {
-    max-height: 18rem;
+    max-height: 288px;
     position: relative;
-    top: 4rem;
+    top: 64px;
 }
 
 .double-image > img {
@@ -356,22 +366,22 @@ Link:visited {
 
 .about-1 {
     position: relative;
-    top: -2rem;
-    left: 6rem;
+    top: -32px;
+    left: 96px;
     border-radius: 16px;
 }
 
 .about-2 {
     position: absolute;
-    top: -4rem;
-    right: 0rem;
+    top: -64px;
+    right: 0;
     border-radius: 16px;
 }
 
 /* RESERVE A TABLE */
 
 .reserve-table {
-    color: #ffffff;
+    color: var(--color-white);
     overflow: hidden;
     position: relative;
     text-align: center;
@@ -397,7 +407,7 @@ Link:visited {
     font-size: 24px;
     padding: 8px 24px;
     border-radius: 16px;
-    background-color: #495e57;
+    background-color: var(--color-green-dark);
     transform: translate(-50%, -50%);
 }
 
@@ -428,7 +438,7 @@ Link:visited {
 }
 
 .confirmation-header {
-    color: #ffffff;
+    color: var(--color-white);
     position: relative;
     text-align: center;
     height: calc(100vh - 355px);
@@ -451,8 +461,8 @@ Link:visited {
 }
 
 .redirect-button {
-    background-color: #f4ce14;
-    color: #464646 !important;
+    background-color: var(--color-primary);
+    color: var(--color-gray-dark) !important;
     padding: 16px;
     border-radius: 16px;
     min-width: 180px;
@@ -462,8 +472,8 @@ Link:visited {
 }
 
 .redirect-button:hover {
-    background-color: #464646;
-    color: #ffffff !important;
+    background-color: var(--color-gray-dark);
+    color: var(--color-white) !important;
     transition: 0.2s;
 }
 
@@ -471,9 +481,9 @@ Link:visited {
 
 footer {
     min-height: 208px;
-    color: #ffffff;
+    color: var(--color-white);
     padding: 24px 12px;
-    background-color: #495e57;
+    background-color: var(--color-green-dark);
 }
 
 .footer-content {
@@ -499,7 +509,7 @@ footer {
 .footer-links > Link,
 .footer-links > li {
     display: block;
-    color: #ffffff;
+    color: var(--color-white);
     padding-top: 8px;
     transition: color 0.5s;
     font-family: 'Karla', 'Sans Serif';
@@ -507,7 +517,7 @@ footer {
 
 .footer-links > a:hover,
 .footer-links > Link:hover {
-    color: #f4ce14;
+    color: var(--color-primary);
 }
 
 .img-footer {
@@ -516,7 +526,7 @@ footer {
 
 .img-footer > img {
     padding: 8px;
-    background-color: #ffffff;
+    background-color: var(--color-white);
 }
 
 /* MEDIA QUERIES*/
@@ -551,7 +561,7 @@ footer {
 
     .testimonials-carousel {
         display: block;
-        background-color: #edefee;
+        background-color: var(--color-green-light);
     }
 
     .footer-content > menu {
