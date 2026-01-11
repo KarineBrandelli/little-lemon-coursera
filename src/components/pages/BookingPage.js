@@ -14,7 +14,7 @@ export default function BookingPage() {
 
     return (
         <>
-            <Heading />
+            <Heading isReservation />
             <ReservationForm
                 availableTimes={availableTimes}
                 updateTimes={dispatch}

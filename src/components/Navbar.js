@@ -1,32 +1,47 @@
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import Navigation from './Navigation'
 import Hamburger from '../assets/hamburger.png'
 import Close from '../assets/close.png'
 
 export default function Navbar() {
-    const [navbarOpen, setNavbarOpen] = useState(false)
+    const [openMenu, setOpenMenu] = useState(false)
 
-    function handleToggle() {
-        setNavbarOpen(!navbarOpen)
+    const handleToggle = () => {
+        setOpenMenu(prev => !prev)
     }
 
     return (
-        <nav>
-            <nav className='burger'>
-                <img
-                    src={require('../assets/nav-logo.png')}
-                    alt='Little Lemon logo'
-                    className='nav-image'></img>
-
-                <button className='burger-icon' onClick={handleToggle}>
+        <nav className='flex flex-column justify-center'>
+            <div className='flex align-center space-between'>
+                <NavLink to='/' className='nav-logo-container'>
                     <img
-                        src={navbarOpen ? Close : Hamburger}
-                        alt='Navigation Bar'
+                        width='100%'
+                        alt='Little Lemon logo'
+                        src={require('../assets/logo.png')}
                     />
-                </button>
-            </nav>
-            <Navigation device='desktop' />
-            {navbarOpen ? <Navigation device='mobile' /> : ''}
+                </NavLink>
+
+                <div className='mobile'>
+                    <button className='burguer-icon' onClick={handleToggle}>
+                        <img
+                            width='100%'
+                            alt='Menu icon'
+                            src={openMenu ? Close : Hamburger}
+                        />
+                    </button>
+                </div>
+
+                <menu className='flex desktop'>
+                    <Navigation />
+                </menu>
+            </div>
+
+            {openMenu && (
+                <menu className='mobile'>
+                    <Navigation />
+                </menu>
+            )}
         </nav>
     )
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function ReservationForm(props) {
     const [fName, setFName] = useState('')
@@ -32,7 +32,8 @@ export default function ReservationForm(props) {
     return (
         <form className='reservation-form'>
             <div>
-                <label htmlFor='fName'>First Name</label> <br></br>
+                <label htmlFor='fName'>First Name</label>
+                <br />
                 <input
                     type='text'
                     id='fName'
@@ -45,7 +46,8 @@ export default function ReservationForm(props) {
             </div>
 
             <div>
-                <label htmlFor='lName'>Last Name</label> <br></br>
+                <label htmlFor='lName'>Last Name</label>
+                <br />
                 <input
                     type='text'
                     id='lName'
@@ -57,7 +59,8 @@ export default function ReservationForm(props) {
             </div>
 
             <div>
-                <label htmlFor='email'>Email</label> <br></br>
+                <label htmlFor='email'>Email</label>
+                <br />
                 <input
                     type='email'
                     id='email'
@@ -70,7 +73,8 @@ export default function ReservationForm(props) {
             </div>
 
             <div>
-                <label htmlFor='phonenum'>Phone Number</label> <br></br>
+                <label htmlFor='phonenum'>Phone Number</label>
+                <br />
                 <input
                     type='tel'
                     id='phonenum'
@@ -83,7 +87,8 @@ export default function ReservationForm(props) {
             </div>
 
             <div>
-                <label htmlFor='people'>Number of People</label> <br></br>
+                <label htmlFor='people'>Number of People</label>
+                <br />
                 <input
                     type='number'
                     id='people'
@@ -95,53 +100,61 @@ export default function ReservationForm(props) {
                     onChange={e => setPeople(e.target.value)}></input>
             </div>
 
-            <div>
-                <label htmlFor='date'>Select Date</label> <br></br>
-                <input
-                    type='date'
-                    id='date'
-                    required
-                    value={date}
-                    onChange={handleDateChange}></input>
+            <div className='reservation-info'>
+                <div className='flex-expanded'>
+                    <label htmlFor='date'>Select Date</label>
+                    <br />
+                    <input
+                        type='date'
+                        id='date'
+                        required
+                        value={date}
+                        onChange={handleDateChange}></input>
+                </div>
+
+                <div className='flex-expanded'>
+                    <label htmlFor='time'>Select Time</label>
+                    <br />
+                    <select id='time' required>
+                        {finalTime}
+                    </select>
+                </div>
+            </div>
+
+            <div className='reservation-info'>
+                <div className='flex-expanded'>
+                    <label htmlFor='occasion'>Occasion</label>
+                    <br />
+                    <select
+                        id='occasion'
+                        value={occasion}
+                        onChange={e => setOccasion(e.target.value)}>
+                        <option>None</option>
+                        <option>Birthday</option>
+                        <option>Anniversary</option>
+                        <option>Engagement</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+
+                <div className='flex-expanded'>
+                    <label htmlFor='preferences'>Seating preferences</label> <br />
+                    <select
+                        id='preferences'
+                        value={preferences}
+                        onChange={e => setPreferences(e.target.value)}>
+                        <option>None</option>
+                        <option>Indoors</option>
+                        <option>Outdoor (Patio)</option>
+                        <option>Outdoor (Sidewalk)</option>
+                    </select>
+                </div>
             </div>
 
             <div>
-                <label htmlFor='time'>Select Time</label> <br></br>
-                <select id='time' required>
-                    {finalTime}
-                </select>
-            </div>
-
-            <div>
-                <label htmlFor='occasion'>Occasion</label> <br></br>
-                <select
-                    id='occasion'
-                    value={occasion}
-                    onChange={e => setOccasion(e.target.value)}>
-                    <option>None</option>
-                    <option>Birthday</option>
-                    <option>Anniversary</option>
-                    <option>Engagement</option>
-                    <option>Other</option>
-                </select>
-            </div>
-
-            <div>
-                <label htmlFor='preferences'>Seating preferences</label>{' '}
-                <br></br>
-                <select
-                    id='preferences'
-                    value={preferences}
-                    onChange={e => setPreferences(e.target.value)}>
-                    <option>None</option>
-                    <option>Indoors</option>
-                    <option>Outdoor (Patio)</option>
-                    <option>Outdoor (Sidewalk)</option>
-                </select>
-            </div>
-
-            <div>
-                <label htmlFor='comments'>Additional Comments</label> <br></br>
+                <label htmlFor='comments'>Additional Comments</label>
+                <br />
                 <textarea
                     id='comments'
                     rows={8}
@@ -151,18 +164,20 @@ export default function ReservationForm(props) {
                     onChange={e => setComments(e.target.value)}></textarea>
             </div>
 
-            <div>
-                <br></br>
+            <div className='reservation-confirm'>
                 <small>
                     <p>
                         Note: You cannot edit your reservation after submission.
+                    </p>
+                    <p>
                         Please double-check your answer before submitting your
                         reservation request.
                     </p>
                 </small>
-                <Link className='action-button' to='/confirmation'>
+
+                <NavLink className='action-button' to='/confirmation'>
                     Book Table
-                </Link>
+                </NavLink>
             </div>
         </form>
     )

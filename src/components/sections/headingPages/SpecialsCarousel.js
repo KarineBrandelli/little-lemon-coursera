@@ -7,23 +7,29 @@ import SpecialCard from './CardInfo/SpecialCard'
 export default function CarouselPage() {
     return (
         <Carousel
-            infiniteLoop={true}
-            autoPlay={true}
-            Interval={5000}
+            autoPlay
+            showArrows
+            infiniteLoop
+            showIndicators
+            interval={4000}
+            showThumbs={false}
             showStatus={false}>
             <SpecialCard
+                isCarousel
                 image={GreekSalad}
                 name='Greek Salad'
                 price='$12.99'
                 description='Feta Cheese, tomato, lettuce'
             />
             <SpecialCard
+                isCarousel
                 image={Bruschetta}
                 name='Bruschetta'
                 price='$16.99'
                 description='Bread, mango, green onions'
             />
             <SpecialCard
+                isCarousel
                 image={LemonDessert}
                 name='Lemon Dessert'
                 price='$8.50'

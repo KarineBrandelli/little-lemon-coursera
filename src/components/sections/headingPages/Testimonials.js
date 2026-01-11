@@ -46,7 +46,7 @@ export default function Testimonials() {
                 <TestimonialCard
                     name='Jack Hu'
                     description='This restaurant served as a perfect dinner for me after a 
-                long night of studying. I would definitely order from here again!'
+                long night of studying.'
                 />
             </section>
 

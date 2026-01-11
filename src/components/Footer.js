@@ -1,65 +1,69 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default function Footer() {
     return (
         <footer>
-            <menu>
-                <li className='img-footer'>
+            <div className='footer-content'>
+                <div className='img-footer'>
                     <img
-                        src={require('../assets/footer-logo.png')}
-                        alt='Little Lemon logo'></img>
-                </li>
-                <li className='contact'>
-                    <h1 className='footer-header'>Navigation</h1>
-                    <ul className='footer-links'>
-                        <Link to='/'>Home</Link>
-                        <Link to='/about'>About</Link>
-                        <a
-                            href={require('../assets/menu.webp')}
-                            target='_blank'
-                            rel='noreferrer'>
-                            Menu
-                        </a>
-                        <Link to='/reservations'>Reservations</Link>
-                        <Link to='/order'>Order</Link>
-                        <Link to='/login'>Login</Link>
-                    </ul>
-                </li>
+                        width='100%'
+                        alt='Little Lemon logo'
+                        src={require('../assets/footer-img.png')}
+                    />
+                </div>
 
-                <li>
-                    <h1 className='footer-header'>Contact</h1>
-                    <ul className='footer-links'>
-                        <li>2395 Maldove Way,</li>
-                        <li>Chicago Illinois</li>
-                        <br></br>
-                        <li>(629)-243-6827</li>
-                        <br></br>
-                        <a
-                            href='mailto: info@littlelemon.com'
-                            target='_blank'
-                            rel='noreferrer'>
-                            info@littlelemon.com
-                        </a>
-                    </ul>
-                </li>
-                <li>
-                    <h1 className='footer-header'>Connect</h1>
-                    <ul className='footer-links'>
-                        <a
-                            href='https://www.facebook.com/thelittlelemonshop/'
-                            target='_blank'
-                            rel='noreferrer'>
-                            Facebook
-                        </a>
-                        <a
-                            href='https://www.instagram.com/littlelemonmoon/'
-                            target='_blank'
-                            rel='noreferrer'>
-                            Instagram
-                        </a>
-                    </ul>
-                </li>
-            </menu>
+                <menu className='flex'>
+                    <li className='contact'>
+                        <h2>Navigation</h2>
+                        <ul className='footer-links'>
+                            <NavLink to='/'>Home</NavLink>
+                            <NavLink to='/about'>About</NavLink>
+                            <a
+                                href={require('../assets/menu.webp')}
+                                target='_blank'
+                                rel='noreferrer'>
+                                Menu
+                            </a>
+                            <NavLink to='/reservations'>Reservations</NavLink>
+                            <NavLink to='/order'>Order</NavLink>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h2>Contact</h2>
+                        <ul className='footer-links'>
+                            <li>2395 Maldove Way,</li>
+                            <li>Chicago Illinois</li>
+                            <br></br>
+                            <li>(629)-243-6827</li>
+                            <a
+                                href='mailto: info@littlelemon.com'
+                                target='_blank'
+                                rel='noreferrer'>
+                                info@littlelemon.com
+                            </a>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h2>Connect</h2>
+                        <ul className='footer-links'>
+                            <a
+                                href='https://www.facebook.com/thelittlelemonshop/'
+                                target='_blank'
+                                rel='noreferrer'>
+                                Facebook
+                            </a>
+                            <a
+                                href='https://www.instagram.com/littlelemonmoon/'
+                                target='_blank'
+                                rel='noreferrer'>
+                                Instagram
+                            </a>
+                        </ul>
+                    </li>
+                </menu>
+            </div>
         </footer>
     )
 }
