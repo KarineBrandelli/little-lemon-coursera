@@ -1,40 +1,34 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-export default function Navigation(props) {
+export default function Navigation() {
     return (
-        <menu className={`navbar-menu ${props.device}`}>
-            {props.device === 'mobile' ? (
-                ''
-            ) : (
-                <Link to='/'>
-                    <img
-                        src={require('../assets/nav-logo.png')}
-                        alt='Little Lemon logo'
-                        className='nav-image'></img>
-                </Link>
-            )}
-            <Link className='hover-effect' to='/'>
-                <h1>Home</h1>
-            </Link>
-            <Link className='hover-effect' to='/about'>
-                <h1>About</h1>
-            </Link>
+        <>
+            <NavLink
+                to='/'
+                className={({ isActive }) => (isActive ? 'active-link' : '')}>
+                <h5 className='menu-link'>Home</h5>
+            </NavLink>
+            <NavLink
+                to='/about'
+                className={({ isActive }) => (isActive ? 'active-link' : '')}>
+                <h5 className='menu-link'>About</h5>
+            </NavLink>
             <a
-                className='hover-effect'
                 href={require('../assets/menu.webp')}
                 target='_blank'
                 rel='noreferrer'>
-                <h1>Menu</h1>
+                <h5 className='menu-link'>Menu</h5>
             </a>
-            <Link className='hover-effect' to='/reservations'>
-                <h1>Reservations</h1>
-            </Link>
-            <Link className='hover-effect' to='/order'>
-                <h1>Order</h1>
-            </Link>
-            <Link className='hover-effect' to='/login'>
-                <h1>Login</h1>
-            </Link>
-        </menu>
+            <NavLink
+                to='/reservations'
+                className={({ isActive }) => (isActive ? 'active-link' : '')}>
+                <h5 className='menu-link'>Reservations</h5>
+            </NavLink>
+            <NavLink
+                to='/order'
+                className={({ isActive }) => (isActive ? 'active-link' : '')}>
+                <h5 className='menu-link'>Order</h5>
+            </NavLink>
+        </>
     )
 }
