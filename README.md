@@ -11,7 +11,7 @@
 </p>
 
 <h3 align="center">
-    <a href="https://karinebrandelli.github.io/little-lemon-coursera/">
+    <a href="https://little-lemon-coursera-psi.vercel.app/">
         <strong>« See the preview »</strong>
     </a>
 </h3>

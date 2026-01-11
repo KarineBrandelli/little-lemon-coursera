@@ -3,7 +3,6 @@
     "license": "MIT",
     "version": "1.0.0",
     "author": "Karine Brandelli Padilha",
-    "homepage": "https://karinebrandelli.github.io/little-lemon-coursera",
     "description": "Coursera's Front-End Developer Capstone Final Project",
     "scripts": {
         "start": "react-scripts start",
