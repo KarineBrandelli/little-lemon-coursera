@@ -137,9 +137,9 @@ export default function ReservationForm(props) {
                     </select>
                 </div>
 
-
                 <div className='flex-expanded'>
-                    <label htmlFor='preferences'>Seating preferences</label> <br />
+                    <label htmlFor='preferences'>Seating preferences</label>{' '}
+                    <br />
                     <select
                         id='preferences'
                         value={preferences}
